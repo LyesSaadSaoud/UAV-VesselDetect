@@ -1,0 +1,105 @@
+areaPoints: 
+- [121.14307977822178, 646.8642504334499]
+- [1649.0846494790262, 650.9779650751218]
+- [1647.1374512099173, -1129.4631447548738]
+- [419.0144723207828, -1130.546284647222]
+
+SearchPoints:
+  - id: 0
+    uavPosF: -500
+    uavPosL: 0
+    uavPosU: 7.5
+    uavYaw: 0
+    yawRange: 170
+    timeout: 300
+  - id: 0
+    uavPosF: 0
+    uavPosL: 0
+    uavPosU: 7.5
+    uavYaw: 0
+    yawRange: 180
+    timeout: 300
+
+uavInitialPos: [[0], [0], [7.5]]
+
+targetInitialPos: [[-358], [933], [0]]
+
+preSearchData:
+  - pitchDeg: 0
+    yawDeg: 95
+    hfovDeg: 30
+    maxRateDeg: 5
+  - pitchDeg: 0
+    yawDeg: 100
+    hfovDeg: 30
+    maxRateDeg: 5
+
+podInitialData:
+  pitchDeg: 0
+  yawDeg: 30
+  hfovDeg: 20
+  maxRateDeg: 20
+
+preGuideData:
+  - pitchDeg: 4
+    yawDeg: -20
+    hfovDeg: 20
+    maxRateDeg: 5
+  - pitchDeg: 4
+    yawDeg: 20
+    hfovDeg: 20
+    maxRateDeg: 5
+
+dockData:
+  pitchDeg: 4
+  yawDeg: 0
+  hfovDeg: 20
+  maxRateDeg: 20
+
+searchConfig:
+  - theTime: 4
+    widthRatio: 0.1
+
+targetSimilarityThreshold: 0.2
+
+onReportFailure: 'next' # 'next' or 'remove'
+
+usvGuideSideLength: 500
+
+others:
+  - 'usv'
+  - 'tuav6'
+  - 'tuav8'
+
+related:
+  - 'usv'
+
+laserOn: True
+
+guideWidth:
+  min: 0.08
+  max: 0.12
+  avg: 0.1
+
+guideMaxRateDeg: 2
+
+trackWidth:
+  min: 0.10
+  max: 0.50
+
+trackMaxRateDeg: 20
+
+uavYawDeg: 120
+
+myDatalinkIpAddr: '192.168.147.30'
+usvDatalinkIpAddr: '192.168.147.60'
+
+yawOffsetToUSV: 10
+
+ksbStates:
+  - 'NormalState'
+  - 'TargetConfirmed'
+  - 'TargetRejected'
+  - 'GoHome'
+
+ksbThreshold: 10

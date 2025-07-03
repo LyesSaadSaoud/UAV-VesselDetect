@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="spirecv_ros" type="saving_image_with_airborne_info" name="saving_image_with_airborne_info" output="screen">
+        <param name="uav_id" type="int" value="1" />
+        <param name="camera_parameters" type="string" value="$(find spirecv_ros)/camera_params/calib_webcam_1920x1080.yaml" />
+        <param name="algorithm_parameters" type="string" value="$(find spirecv_ros)/algorithm_params/sv_algorithm_params_drone_1280.json" />
+        <param name="local_saving_path" type="string" value="/home/amov/Videos" />
+    </node>
+</launch>

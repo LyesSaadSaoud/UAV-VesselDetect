@@ -1,0 +1,22 @@
+<launch>
+    <arg name="mode" default="all"/>
+    <arg name="decoder" default="soft"/>
+    <group if="$(eval arg('decoder') == 'soft')" >
+	    <node pkg="spirecv_ros" type="rtsp2topic" name="rtsp2topic" output="screen" />
+    </group>
+
+    <node pkg="spirecv_ros" type="mbzirc_suav_vessel_detection" name="mbzirc_suav_vessel_detection" output="screen">  
+        <param name="mode" type="string" value="$(arg mode)" />
+        <param name="video_decoder" type="string" value="$(arg decoder)" />
+        <param name="camera_parameters" type="string" value="$(find spirecv_ros)/camera_params/calib_webcam_640x480.yaml" />
+        <param name="local_saving_path" type="string" value="$(find spirecv_ros)/video_vessel" />
+        <param name="local_saving_path_2" type="string" value="$(find spirecv_ros)/video_usv" />
+        <param name="show_image" type="bool" value="True" />
+        <param name="save_video" type="bool" value="True" />
+        <param name="windowWidth" type="double" value="640" />
+        <param name="windowHeight" type="double" value="360" />
+        <param name="windowX" type="double" value="1280" />
+        <param name="windowY" type="double" value="0" />
+    </node>
+
+</launch>

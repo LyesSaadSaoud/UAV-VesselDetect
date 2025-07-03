@@ -1,0 +1,6 @@
+
+<launch>
+    <node pkg="spirecv_ros" type="rtsp2topic" name="rtsp2topic" output="screen">
+    
+    </node>
+</launch>

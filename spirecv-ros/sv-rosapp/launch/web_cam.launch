@@ -1,0 +1,13 @@
+
+<launch>
+    <node pkg="spirecv_ros" type="web_cam" name="web_cam" output="screen">
+        <param name="camera_type" type="int" value="4" />
+        <param name="cam_id" type="int" value="0" />
+        <param name="cam_h" type="int" value="1080" />
+        <param name="cam_w" type="int" value="1920" />
+        <!-- 发布到ros图像话题 -->
+        <param name="output_topic" type="string" value="/spirecv/camera/rgb/image_raw" />
+        <param name="resize_h" type="int" value="0" />
+        <param name="resize_w" type="int" value="0" />
+    </node>
+</launch>
